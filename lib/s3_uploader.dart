@@ -14,7 +14,7 @@ import 'Policy.dart';
 
 // A uploader to s3 amazon service
 class S3Uploader {
-  
+
   String _endpoint;
   String _secretId;
   String _bucketName;
@@ -53,8 +53,8 @@ class S3Uploader {
   }
 
   // Send the given file
-  Future send({@required File file, @required String imagePathInS3Bucket,   
-               Function(int count, int total) onSendProgress, int expirationTime=15 }) {
+  Future<String> send({@required File file, @required String imagePathInS3Bucket,   
+               Function(int count, int total) onSendProgress, int expirationTime=15 }) async {
 
     final FormData _formData = _createFormData(file, imagePathInS3Bucket, expirationTime);
 
@@ -62,7 +62,7 @@ class S3Uploader {
       _endpoint, 
       data: _formData,
       onSendProgress: onSendProgress
-    );
+    ).then<String>((_) => getLink(imagePathInS3Bucket));
   }
 
 
@@ -87,7 +87,7 @@ class S3Uploader {
 
   // Get link with the given path in S3Bucket
   String getLink(String imagePathInS3Bucket) {
-    return '$_endpoint$imagePathInS3Bucket';
+    return '$_endpoint/$imagePathInS3Bucket';
   }
 
 
