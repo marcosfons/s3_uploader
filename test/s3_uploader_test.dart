@@ -25,7 +25,7 @@ void main() {
       secretId: SECRET_ID_S3
     );
     
-    final File file = File('C:/Users/Marcos Fonseca/Desktop/Screenshot_1578067431.png');
+    final File file = File('');
 
     
     await _uploaderS3.send(file: file, imagePathInS3Bucket: 'plugin/teste.png', expirationTime: 24 * 60 * 60, onSendProgress: onSendProgress)
