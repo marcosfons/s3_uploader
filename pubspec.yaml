@@ -1,8 +1,8 @@
 name: s3_uploader
-description: A new Flutter package project.
+description: Send files to amazon s3 service storage.
 version: 0.0.1
-author:
-homepage:
+author: Marcos Fonseca <marcosf_@hotmail.com>
+homepage: https://github.com/marcosfons/s3_uploader
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
