@@ -1,6 +1,6 @@
 name: s3_uploader
 description: Send files to amazon s3 service storage.
-version: 0.0.1
+version: 0.0.2
 author: Marcos Fonseca <marcosf_@hotmail.com>
 homepage: https://github.com/marcosfons/s3_uploader
 
